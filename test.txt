@@ -2,4 +2,4 @@ Testing with new file
 
 This edited file.
 
-ok
+This is new line.
