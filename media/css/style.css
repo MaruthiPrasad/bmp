@@ -1,0 +1,176 @@
+
+/* General style starts */
+.p-b-15 {
+    padding-bottom: 15px !important;
+}
+.p-t-15 {
+    padding-top: 15px !important;
+}
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t-5{
+    margin-top: 5px;
+}
+.m-t-20{
+    margin-top: 20px;
+}
+.m-b-20{
+    margin-bottom: 20px;
+}
+.text-center{
+    text-align: center;
+}
+.div-block{
+    display: block;
+}
+.div-inline-block{
+    display: inline-block;
+}
+.bg-grey{
+    background-color: #eee;
+}
+.color-white{
+    color:#fff;
+}
+.bg-white{
+    background-color:#fff;
+}
+/* General style ends */
+
+body{
+    line-height: 1.6;
+    background : url('http://localhost/maru_templates/media/assets/images1.jpg');
+    font-size :15px;
+}
+.site-top-title{
+    min-height: 90px;
+}
+a.site-logo{
+    font-family: fontawesome;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 37px;
+    letter-spacing: 3px;
+    color: #fff;
+    display: block;
+    position: relative;
+    margin-top: 30px;
+    text-decoration: none;
+}
+.site-logo-title{
+    font-size: 18px;
+    float:right;
+    font-family: Segoe UI;
+    opacity: 0.6;
+    letter-spacing: 4px;
+    color: #fff;
+}
+.cs-nav-main{
+    background-color: #444;
+    margin-bottom: 0px;
+}
+.cs-nav li a{
+    color: #fff !important;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
+}
+.cs-nav li a:hover{
+    color: #ddd !important;
+}
+.navbar-default {
+    border-color: #444;
+}
+.navbar-brand {
+    height: auto;
+}
+.cs-sb-l{
+    padding: 20px 5px;
+}
+.cs-sb-r{
+    padding: 20px 5px;
+}
+.cs-ftr{
+    background-color: #222;
+    border-top: 1px dotted #777;
+    color: #fff;
+    margin-top: 5px;
+}
+.ftr-tech{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.ftr-tech ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin:10px;
+    padding:10px 20px;
+    border-radius:5px;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#333;
+    color:#999;
+    transition: background 0.5s linear 0s, color 0.5s linear 0s;
+    -webkit-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+    -moz-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+    -ms-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+    -o-transition: background 0.5s linear 0s, color 0.5s linear 0s;
+}
+.ftr-tech ul li:hover
+{
+    background:#4CAF50;
+    color:#fff;
+    cursor: pointer;
+}
+.ftr-tech ul li a{
+    color:#fff;
+    text-decoration: none;
+}
+.promo-box{
+    padding: 20px;
+    color:#fff;
+    background-color: #333;
+}
+.cs-new-batch{
+    border: 1px solid #ddd;
+}
+.copyright{
+    background-color: #333;
+}
+
+/* Admin related styles Starts */
+.admin-login{
+    background-color:#333;
+    padding: 25px 70px;
+}
+.admin-main{
+    height: 500px;
+    position: relative;
+}
+.login-div{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* Admin related styles ends */
+
+/* Media Queries Starts */
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .cs-sb-l, .cs-sb-r {
+        display: none;
+    }
+}
+@media (min-width: 992px) {
+    .site-logo-title{
+        margin-top:60px;
+    }
+}
+/* Media Queries Ends */
