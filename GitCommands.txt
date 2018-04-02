@@ -1,0 +1,277 @@
+To Clone a new repository
+-------------------------
+
+git clone {repository-url}
+
+E.g: git clone https://github.com/MaruthiPrasad/jquery-ptc.git
+
+
+Clones a new repository named "jquery-ptc", initializes a .git directory inside it, 
+
+pulls down all the data for that repository, and checks out a working copy of the latest version.
+
+If you want to clone the repository into a directory named something other than ?jquery-ptc?, you can specify that as the next command-line option.
+
+
+E.g: git clone https://github.com/MaruthiPrasad/jquery-ptc.git JqueryExamples
+
+
+Ref: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
+
+
+configuring
+-----------
+git config --global user.name "Mona Lisa"
+git config --global user.email "email@example.com"
+
+
+git config user.name "Mona Lisa"
+git config user.email "email@example.com"
+
+To List Branches
+----------------
+
+git branch
+
+
+To Create new branch
+--------------------
+
+git branch {branch-name}
+
+E.g: git branch my_first_branch
+
+
+To Switch from one branch to other
+----------------------------------
+
+git checkout {target-branch-name}
+
+E.g: git checkout my_first_branch
+
+
+Note: To create a branch and switch to it at the same time, you can run the git checkout command with the -b switch
+
+E.g: git checkout -b my_first_branch
+
+
+To Check staus or changes
+-------------------------
+
+git status
+
+Create new files or edit files then check "git status" it will shown the changes list
+
+origin
+------
+origin is the default name of the remote git repository you cloned from.
+
+
+Inspecting a Remote
+-------------------
+
+If you want to see more information about a particular remote, you can use the 
+
+git remote show [remote-name]
+
+E.g:
+$) git remote show origin
+
+
+To add file(s) to staging area
+------------------------------
+
+git add {file(s)-path}
+
+Adding single file
+-------------------
+E.g: git add scripts/abc.js
+
+Adding Multiple files at one step
+---------------------------------
+E.g: git add email_domais_count.php index.php memcache.php .htaccess 
+
+===============================================================================================
+To Commit changes
+-----------------
+
+git commit -m "{comment-text if we have user-story number include}"
+
+E.g: git commit -m "[US-12345]This is my first commit"
+
+Commit all modified files without adding to staging area
+--------------------------------------------------------
+git commit -am "[US-12345]This is my first commit"
+
+We can use above command to commit changes[only modified files] without adding files to stage.
+
+Note: If we created any new file it is mandatory to add that file to staging area and then commit.
+
+
+To Change commit message use below command 
+------------------------------------------
+git commit --amend -m "New commit message"
+
+
+To push changes to remote branch
+--------------------------------
+
+git push [remote-name] [branch-name]
+
+E.g:
+$) git push origin my_first_branch
+
+
+You can use this format to push a local branch into a remote branch that is named differently.
+
+git push origin local-branch:remote-branch
+
+E.g:
+$) git push origin my_first_branch:my_branch
+
+
+To get(download) changes from live repository
+---------------------------------------------
+
+git fetch origin
+
+
+git fetch really only downloads new data from a remote repository - but it doesn't integrate any of this new data into "your working files". 
+Fetch is great for getting a fresh view on all the things that happened in a remote repository(i.e gets all latest existing/new branches ).
+
+
+To get and merge changes from live repository to current working copy
+---------------------------------------------------------------------
+
+git pull origin {branch_name}
+
+pull not only downloads new data; it also directly integrates it into your current working copy files.
+
+Since "git pull" tries to merge remote changes with your local ones, a so-called "merge conflict" can occur.
+
+E.g: git checkout my_first_branch
+
+git pull origin master
+
+Now you get all the latest changes from remote master branch to current working copy(my_first_branch), if conflicts occurs resolve it.
+
+
+While merging if we get any conflicts to revert back to actual state [no merging will happen only current branch changes exists]
+--------------------------------------------------------------------------------------------------------------------------------
+git merge --abort
+
+
+================================================================================================================================
+Rebase multiple commits to one using squash
+-------------------------------------------
+git rebase -i HEAD~{n}
+
+E.g:) git rebase -i HEAD~3
+
+Note:
+1) press button "i" to insert/edit text.
+2) press button "Esc"(escape) and type ":wq" and press "enter" button.
+
+To abort rebase
+----------------
+git rebase --abort
+
+
+Reference: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
+
+Undoing Things (Be Carefull - Don't use)
+========================================
+
+If we forget any files to commit but we want to add that files in that commit we can do this using below command
+----------------------------------------------------------------------------------------------------------------
+
+git commit --amend
+
+E.g:)
+$) git commit -m 'initial commit'
+
+$) git add forgotten_file
+
+$) git commit --amend
+
+
+let�s say you�ve changed two files and want to commit them as two separate changes, but you accidentally type git add and stage them both.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To unstage the CONTRIBUTING.md file
+
+git reset HEAD CONTRIBUTING.md
+
+E.g)
+$) git add *
+
+$) git reset HEAD CONTRIBUTING.md
+
+
+Now check status it shows CONTRIBUTTING.md file as modified
+
+Note: reset command is dangerous
+
+To revert or discard changes use below command
+----------------------------------------------
+
+git checkout -- file_name
+
+E.g)
+
+$) git checkout -- CONTRIBUTING.md
+
+
+
+Below are the commands to know but don't do in realtime environment it will take care by administrators
+=======================================================================================================
+
+Merging changes with master
+---------------------------
+
+First go to master branch
+
+$) git checkout master
+
+
+Now merge required branch with master
+
+$) git merge {branch-name}
+
+E.g: git merge my_first_branch
+
+Once merging done to delete branch use following approach
+
+
+Deleting branch
+---------------
+
+git branch -d {branch-name}
+
+E.g: git branch -d my_first_branch
+
+
+Deleting Remote Branch
+----------------------
+
+git push origin --delete my_first_branch
+
+=====================================================================================================================================================================
+/********************************************************************************************************************************************************************/
+
+Issues Faced and - Fixes
+-------------------------
+fatal: Authentication failed for 'https://sv988w@codecloud.web.att.com/scm/st_ucomm/youcoach.git/'
+
+Update your credentials, go to Control Panel -> Credential Manager -> Generic Credentials. 
+Find the credentials related to your git account and edit them to use the updated passwords
+
+https://cmatskas.com/how-to-update-your-git-credentials-on-windows/
+
+
+
+
+
+
+
+
